@@ -1,5 +1,4 @@
 # HealthDeck
-A simple todo app built with django
 A Patients Management System
 
 
@@ -20,6 +19,15 @@ $ git clone https://github.com/sakhimpungose/HealthDeck.git
 You will need django to be installed in you computer to run this app. Head over to https://www.djangoproject.com/download/ for the download guide
 
 Once you have downloaded django, go to the cloned repo directory and run the following command
+
+Via console/cmd `cd` to project folder (healthdeck) and create virtual environment and install requirements.txt
+```bash
+mkvirtualenv yourEnv
+
+pip install -r requirements.txt
+```
+
+
 
 Create Database
 ```sql
