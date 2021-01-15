@@ -23,7 +23,7 @@ PROVINCE_CHOICES = (
 class Patient(models.Model):
     first_name = models.CharField(_('first name'), max_length=32)
     middle_name = models.CharField(_('middle name'), max_length=32, blank=True)
-    last_name = models.CharField(_('first name'), max_length=32, blank=True)
+    last_name = models.CharField(_('last name'), max_length=32, blank=True)
 
     phone = models.CharField(_('phone number'), max_length=10, blank=True)    
     email = models.EmailField(_('email address'), blank=True)    
