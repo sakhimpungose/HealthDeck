@@ -1,16 +1,66 @@
 {% extends "dashboard/base.html" %}
 
 {% block content %}
-  <h1>Patient List</h1>
+  <h2>Patient List</h2>
+
+    
+  <a class="btn btn-success my-1" href="{% url 'dashboard:patient-create' %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+  </svg>
+    Add Patient</a>
+  <hr>
+
   {% if patient_list %}
-  <ul>
-    {% for patient in patient_list %}
-      <li>
-        <a href="#">{{ patient.first_name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="table-responsive">
+  <table class="table table-light table-hover table-striped" id="patients_list">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" colspan="3">Actions</th>
+        <th scope="col">First name</th>
+        <th scope="col">Middle</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Identity Number</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for patient in patient_list %}
+        <tr>
+          <td scope="row">{{ forloop.counter }}</td>
+          <td><a href="{% url 'dashboard:patient-detail' patient.pk %}" data-toggle="tooltip" title="View this patient"><i class="fas fa-eye"></i></a></td>
+          <td><a href="{% url 'dashboard:patient-update' patient.pk %}" title="Update this patient"><i class="fas fa-edit"></i></a></td>
+          <td><a href="{% url 'dashboard:patient-delete' patient.pk %}" class="text-danger" title="Delete this patient"><i class="fas fa-trash-alt"></i></a></td>
+          <td>{{ patient.first_name|default:"-" }}</td>
+          <td>{{ patient.middle_name|default:"-" }}</td>
+          <td>{{ patient.last_name|default:"-" }}</td>
+          <td>{{ patient.date_of_birth|default:"-" }}</td>
+          <td>{{ patient.gender|default:"-" }}</td>
+          <td>{{ patient.nationality|default:"-" }}</td>
+          <td>{{ patient.identity_number|default:"-" }}</td>
+          <td>{{ patient.phone|default:"-" }}</td>
+          <td>{{ patient.email|default:"-"}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
   {% else %}
     <p>There are no patients yet.</p>
   {% endif %} 
+{% endblock %}
+
+{% block additionalScripts %}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#patients_list').dataTable( {
+        responsive: true,
+    } );
+} );
+</script>
 {% endblock %}

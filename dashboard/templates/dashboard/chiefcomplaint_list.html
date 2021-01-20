@@ -1,0 +1,55 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+{% if chiefcomplaint_list %}
+<h2>Chief complaints</h2>
+<hr>
+<div class="table-responsive">
+  <table class="table" id='complaintsList'>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" colspan="3">Actions</th>
+        <th scope="col">Patient</th>
+        <th scope="col">Date of observation</th>
+        <th scope="col">Complaints</th>
+        <th scope="col">General Condition</th>
+        <th scope="col">Current Medication</th>
+        <th scope="col">Immediate Action Taken</th>
+        <th scope="col">Diagnosis</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for complaint in chiefcomplaint_list %}
+      <tr>
+        <td scope="row">{{ forloop.counter }}</td>
+        <td><a href="{% url 'dashboard:chief-complaint-detail' complaint.pk %}" title="View this chief complaint"><i class="fas fa-eye"></i></a></td>
+        <td><a href="{% url 'dashboard:chief-complaint-update' complaint.pk %}" title="Update this chief complaint"><i class="fas fa-edit"></i></a></td>
+        <td><a href="{% url 'dashboard:chief-complaint-delete' complaint.pk %}" class="text-danger" title="Delete this chief complaint"><i class="fas fa-trash-alt"></i></a></td>
+        <td> <a href="{% url 'dashboard:patient-detail' complaint.pk  %}">{{ complaint.patient }}</a></td>
+        <td>{{ complaint.date_of_observation|default:"-" }}</td>
+        <td>{{ complaint.complaints|default:"-" }}</td>
+        <td>{{ complaint.general_condition|default:"-" }}</td>
+        <td>{{ complaint.current_medication|default:"-" }}</td>
+        <td>{{ complaint.immediate_action_taken|default:"-" }}</td>
+        <td>{{ complaint.diagnosis|default:"-" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+  <p>No chief complaints yet</p>
+{% endif %}
+{% endblock %}
+
+{% block additionalScripts %}
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#complaintsList').dataTable( {
+          responsive: true,
+      } );
+  } );
+  </script>
+{% endblock %} 

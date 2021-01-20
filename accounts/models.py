@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from .validators import AlphanumericUsernameValidator
-
 from django.utils.translation import gettext_lazy as _
+
+from .validators import AlphanumericUsernameValidator
 
 
 GENDER_CHOICES = (('F', 'Female'), ('M', 'Male'))
+
 
 class User(AbstractUser):
 
@@ -23,30 +24,10 @@ class User(AbstractUser):
         },
     )
     email = models.EmailField(_('email address'), primary_key=True)
+    phone = models.CharField(_('phone number'), max_length=10, blank=True)
     middle_name = models.CharField(_('middle name'), max_length=64, blank=True)
     date_of_birth = models.DateField(_('date of birth'))
-
     gender = models.CharField(_('gender'), choices=GENDER_CHOICES, max_length=1)
 
     USERNAME_FIELD = 'email'
-
-    REQUIRED_FIELDS = ['username', 'date_of_birth']
-
-class Organisation(models.Model):
-    name = models.CharField(
-        _('organisation name'),
-        max_length=64,
-        unique=True,
-        error_messages = {
-            'unique': _("An organisation with that name already exists."),
-        }
-    )
-
-    description = models.TextField(_('description'), max_length=512, blank=True)
-
-    owner = models.ForeignKey('User', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-
+    REQUIRED_FIELDS = ['username', 'date_of_birth', 'gender']

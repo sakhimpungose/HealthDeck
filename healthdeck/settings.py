@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'qkk=6y2vav%sc@q7mixp-ns29d=j^s$pfsslku*%iq1_tv!o+5'
+SECRET_KEY = 'z!=lsu9seclnl-(_9(&87tn7v-rb1=a3qcy_6#@4-8@0jedc(x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -126,13 +126,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 
 AUTH_USER_MODEL = 'accounts.User'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'dashboard:patients'
 
 #
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -1,0 +1,160 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+{% if form.errors %}
+{{ form.errors }}
+{% endif %}
+<form class="row g-3" action="" method="post" novalidate>
+  {% csrf_token %}
+  {% for hidden in form.hidden_fields %}
+    {{ hidden }}
+  {% endfor %}
+
+  <div class="col-12">
+    <label for="{{ form.patient.id_for_label }}" class="form-label {% if form.patient.errors %}is-invalid{% endif %}">{{ form.patient.label_tag }}</label>
+    <div class="input-group">    
+      {{ form.patient }}
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Options</button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Create New Patient</a></li>
+      </ul>
+    </div>
+    {% if form.patient.errors %}
+    {% for error in form.patient.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.date_of_observation.id_for_label }}" class="form-label {% if form.date_of_observation.errors %}is-invalid{% endif %}">{{ form.date_of_observation.label_tag }}</label>
+    <div class="input-group mb-3">
+      {{ form.date_of_observation }}
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-calendar-day"></i></button>
+    </div>     
+    {% if form.date_of_observation.errors %}
+      {% for error in form.date_of_observation.errors %}
+      <div class="invalid-feedback">{{ error }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.complaints.id_for_label }}" class="form-label {% if form.complaints.errors %}is-invalid{% endif %}">{{ form.complaints.label_tag }}</label>   
+    {{ form.complaints }}
+    {% if form.complaints.errors %}
+    {% for error in form.complaints.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.general_condition.id_for_label }}" class="form-label {% if form.general_condition.errors %}is-invalid{% endif %}">{{ form.general_condition.label_tag }}</label>   
+    {{ form.general_condition }}
+    {% if form.general_condition.errors %}
+    {% for error in form.general_condition.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.current_medication.id_for_label }}" class="form-label {% if form.current_medication.errors %}is-invalid{% endif %}">{{ form.current_medication.label_tag }}</label>   
+    {{ form.current_medication }}
+    {% if form.current_medication.errors %}
+    {% for error in form.current_medication.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.allergies.id_for_label }}" class="form-label {% if form.allergies.errors %}is-invalid{% endif %}">{{ form.allergies.label_tag }}</label>   
+    {{ form.allergies }}
+    {% if form.allergies.errors %}
+    {% for error in form.allergies.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.blood_pressure.id_for_label }}" class="form-label {% if form.blood_pressure.errors %}is-invalid{% endif %}">{{ form.blood_pressure.label_tag }}</label>   
+    {{ form.blood_pressure }}
+    {% if form.blood_pressure.errors %}
+    {% for error in form.blood_pressure.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.pulse.id_for_label }}" class="form-label {% if form.pulse.errors %}is-invalid{% endif %}">{{ form.pulse.label_tag }}</label>   
+    {{ form.pulse }}
+    {% if form.pulse.errors %}
+    {% for error in form.pulse.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.temp.id_for_label }}" class="form-label {% if form.temp.errors %}is-invalid{% endif %}">{{ form.temp.label_tag }}</label>   
+    {{ form.temp }}
+    {% if form.temp.errors %}
+    {% for error in form.temp.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.weight.id_for_label }}" class="form-label {% if form.weight.errors %}is-invalid{% endif %}">{{ form.weight.label_tag }}</label>   
+    {{ form.weight }}
+    {% if form.weight.errors %}
+    {% for error in form.weight.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.height.id_for_label }}" class="form-label {% if form.height.errors %}is-invalid{% endif %}">{{ form.height.label_tag }}</label>   
+    {{ form.height }}
+    {% if form.height.errors %}
+    {% for error in form.height.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.unirene_dipstick.id_for_label }}" class="form-label {% if form.unirene_dipstick.errors %}is-invalid{% endif %}">{{ form.unirene_dipstick.label_tag }}</label>   
+    {{ form.unirene_dipstick }}
+    {% if form.unirene_dipstick.errors %}
+    {% for error in form.unirene_dipstick.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.unirene_dipstick.id_for_label }}" class="form-label {% if form.bmi.errors %}is-invalid{% endif %}">{{ form.bmi.label_tag }}</label>   
+    {{ form.bmi }}
+    {% if form.bmi.errors %}
+    {% for error in form.bmi.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.hiv.id_for_label }}" class="form-label {% if form.hiv.errors %}is-invalid{% endif %}">{{ form.hiv.label_tag }}</label>   
+    {{ form.hiv }}
+    {% if form.hiv.errors %}
+    {% for error in form.hiv.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.diagnosis.id_for_label }}" class="form-label {% if form.diagnosis.errors %}is-invalid{% endif %}">{{ form.diagnosis.label_tag }}</label>   
+    {{ form.diagnosis }}
+    {% if form.diagnosis.errors %}
+    {% for error in form.diagnosis.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+
+    <input type="submit" class="btn btn-primary" value="Save Chief Complaint">
+  </form>
+{% endblock %}
