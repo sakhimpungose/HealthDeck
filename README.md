@@ -51,6 +51,16 @@ DATABASES = {
 ...
 ```
 
+If you don't have postgresql, you can also use the default settings
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
 ```bash
 $ python manage.py makemigrations
 ```
