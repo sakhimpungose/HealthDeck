@@ -1,0 +1,24 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+<form method="POST">
+<div class="input-group mb-3">
+    {% csrf_token %}
+    {{ form.term }}
+    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
+</div>
+</form>
+
+{% if patients %}
+    <h2>Results</h2>
+    <ul>
+        {% for patient in patients %}
+            <li><a href="{% url 'dashboard:patient-detail' patient.pk %}">{{ patient }}</a></li>
+        {% endfor %}
+    </ul>
+    
+    
+    
+{% endif %}
+
+{% endblock %}

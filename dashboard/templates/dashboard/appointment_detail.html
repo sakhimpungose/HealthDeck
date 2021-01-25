@@ -1,0 +1,9 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+  <p><strong class="fs-4">Patient:</strong> <div><a href="{% url 'dashboard:patient-detail' appointment.patient.pk %}">{{ appointment.patient }}</a></div></p>
+  <p><strong class="fs-4">Date of appointment:</strong> <div>{{ appointment.date_of_appointment }}</div></p>
+  <p><strong class="fs-4">status:</strong> <div>{{ appointment.get_status_display  }}</div></p>
+  <p><strong class="fs-4">comment:</strong> <div>{{ appointment.comment }}</div></p>
+  <p><strong class="fs-4">Date appointment made:</strong> <div>{{ appointment.date_appointment_made }}</div></p>
+{% endblock %}

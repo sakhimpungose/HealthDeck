@@ -1,0 +1,81 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+{% if form.errors %}
+{{ form.errors }}
+{% endif %}
+<form class="row g-3" action="" method="post" novalidate>
+  {% csrf_token %}
+  {% for hidden in form.hidden_fields %}
+    {{ hidden }}
+  {% endfor %}
+
+  <div class="col-12">
+    <label for="{{ form.patient.id_for_label }}" class="form-label {% if form.patient.errors %}is-invalid{% endif %}">{{ form.patient.label_tag }}</label>
+    <div class="input-group">    
+      {{ form.patient }}
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Options</button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Create New Patient</a></li>
+      </ul>
+    </div>
+    {% if form.patient.errors %}
+    {% for error in form.patient.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.date_of_appointment.id_for_label }}" class="form-label {% if form.date_of_appointment.errors %}is-invalid{% endif %}">{{ form.date_of_appointment.label_tag }}</label>
+    <div class="input-group mb-3" id="datetimepicker">
+      {{ form.date_of_appointment }}
+      <button class="btn btn-outline-secondary input-group-addon" type="button"><i class="fa fa-calendar-day"></i></button>
+    </div>     
+    {% if form.date_of_appointment.errors %}
+      {% for error in form.date_of_appointment.errors %}
+      <div class="invalid-feedback">{{ error }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.status.id_for_label }}" class="form-label {% if form.status.errors %}is-invalid{% endif %}">{{ form.status.label_tag }}</label>   
+    {{ form.status }}
+    {% if form.status.errors %}
+    {% for error in form.status.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-12">
+    <label for="{{ form.comment.id_for_label }}" class="form-label {% if form.comment.errors %}is-invalid{% endif %}">{{ form.comment.label_tag }}</label>   
+    {{ form.comment }}
+    {% if form.comment.errors %}
+    {% for error in form.comment.errors %}
+    <div class="invalid-feedback">{{ error }}</div>
+    {% endfor %}
+  {% endif %}
+  </div>
+    <input type="submit" class="btn btn-primary" value="Save Appointment">
+  </form>
+{% endblock %}
+
+
+{% block additionalScripts %}
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="{% static 'dashboard/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+<script>
+  $(function () {
+    $('#datetimepicker').datetimepicker({
+          "allowInputToggle": true,
+          "showClose": true,
+          "showClear": true,
+          "showTodayButton": true,
+          "format": "YYYY-MM-DD HH:mm",
+          "minDate": new Date(),
+      });
+  });
+</script>
+{% endblock %}

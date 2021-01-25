@@ -1,0 +1,33 @@
+{% extends "accounts/base.html" %}
+
+{% block content %}
+
+<main class="form-signin">
+  {% if form.errors %}
+    <p class="text-danger">Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+      <p>Please login to see this page.</p>
+    {% endif %}
+  {% endif %}
+  <form method="post" action="{% url 'accounts:login' %}" novalidate>
+    {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <label for="{{ form.username.id_for_label }}" class="visually-hidden">form.username.label_tag</label>
+    {{ form.username }}   
+    <label for="{{ form.password.id_for_label }}" class="visually-hidden">form.password.label_tag</label>
+    {{ form.password }}
+    <div class="form-row mb-2">
+      <a href="{% url 'accounts:password_reset' %}">Lost password?</a>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+</main>
+
+{% endblock %}

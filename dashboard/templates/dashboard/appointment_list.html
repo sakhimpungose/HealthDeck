@@ -1,0 +1,54 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+<h2>Appointments</h2>
+
+<a class="btn btn-success my-1" href="{% url 'dashboard:appointment-create' %}"><i class="fa fa-calendar-day"></i>
+  Add Appointment</a>
+<hr>
+{% if appointment_list %}
+<div class="table-responsive">
+  <table class="table" id='appointmentsList'>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" colspan="3">Actions</th>
+        <th scope="col">Patient</th>
+        <th scope="col">Date of Appointment</th>
+        <th scope="col">Status</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Date Appointment Made</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {% for appointment in appointment_list %}
+      <tr>
+        <td scope="row">{{ forloop.counter }}</td>
+        <td><a href="{% url 'dashboard:appointment-detail' appointment.pk %}" title="View this appointment"><i class="fas fa-eye"></i></a></td>
+        <td><a href="{% url 'dashboard:appointment-update' appointment.pk %}" title="Update this appointment"><i class="fas fa-edit"></i></a></td>
+        <td><a href="{% url 'dashboard:appointment-delete' appointment.pk %}" class="text-danger" title="Delete this appointment"><i class="fas fa-trash-alt"></i></a></td>
+        <td> <a href="{% url 'dashboard:patient-detail' appointment.patient.pk  %}">{{ appointment.patient }}</a></td>
+        <td>{{ appointment.date_of_appointment|default:"-" }}</td>
+        <td>{{ appointment.get_status_display|default:"-" }}</td>
+        <td>{{ appointment.comment|default:"-" }}</td>
+        <td>{{ appointment.date_appointment_made|default:"-" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+  <p>No appointments yet</p>
+{% endif %}
+{% endblock %}
+
+{% block additionalScripts %}
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#appointmentsList').dataTable( {
+          responsive: true,
+      } );
+  } );
+  </script>
+{% endblock %} 

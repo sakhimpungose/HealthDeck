@@ -1,0 +1,101 @@
+{% extends "dashboard/base.html" %}
+
+
+{% block content %}
+<div class="row">
+<div class="col-md-6 border-right mb-3">
+    <div class="p-3 bg-white border shadow-sm rounded">
+        <div class="d-flex justify-content-between align-items-center">
+            <h6 class="heading1">Appointmets</h6>
+            <div class="d-flex flex-row align-items-center text-muted"> <span class=" mr-2">Upcoming</span></div>
+        </div>
+        {% if appointments %}
+        <div class="table-responsive">
+            <table class="table table-hover table-borderless">
+                <thead>
+                    <th>#</th>
+                    <th>Patient</th>
+                    <th>Date of Appointment</th>
+                </thead>
+                <tbody>
+                    {% for appointment in appointments %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{% url 'dashboard:appointment-detail' appointment.pk %}">{{ appointment.patient }}</a></td>
+                        <td>{{ appointment.date_of_appointment }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table> 
+        </div>
+        <div class="bg-white border-top p-3"> <a href="{% url 'dashboard:appointments' %}"> View More</a></div>         
+        {% else %}
+            <p>No upcoming appointments </p>
+        {% endif %}
+    </div>
+</div>
+<div class="col-md-6 mb-3">
+    <canvas id="appointments-chart" style="width: 100%;"></canvas>
+</div>
+</div>
+
+
+
+{%  endblock %}
+
+
+{% block additionalScripts %}
+<script>
+    var ctx = document.getElementById('appointments-chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+
+            labels: [{% for index, item in next_five %}
+                '{{ index }}',
+            {% endfor %}],
+            datasets: [{
+                label: '# of appointments',
+                data: [{% for index, item in next_five %}
+                {{ item }},
+            {% endfor %}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1,
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        maxRotation: 90,
+                        minRotation: 90
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+{% endblock %} 
+
+
+
+

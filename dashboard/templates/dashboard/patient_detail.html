@@ -1,0 +1,133 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}    
+  <a class="btn btn-success my-1" href="{% url 'dashboard:chief-complaint-create-id'  patient.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+  </svg>
+    Add Chief Complaint</a>
+  <hr>
+  <p><strong>First name:</strong> {{ patient.first_name }}</p>
+  <p><strong>Middle name:</strong> {{ patient.middle_name }}</p>
+  <p><strong>Last name:</strong> {{ patient.last_name }}</p>
+  <p><strong>phone:</strong> {{ patient.phone }}</p>
+  <p><strong>Email:</strong> {{ patient.email }}</p>
+  <p><strong>Date of Birth:</strong> {{ patient.date_of_birth }}</p>
+  <p><strong>Gender:</strong> {{ patient.get_gender_display }}</p>
+  <p><strong>Nationality:</strong> {{ patient.nationality }}</p>
+  <p><strong>Id or Passport:</strong> {{ patient.identity_number }}</p>
+  <p><strong>Address:</strong> {{ patient.address1 }}</p>
+  <p><strong>Address 2:</strong> {{ patient.address2 }}</p>
+  <p><strong>City:</strong> {{ patient.city }}</p>
+  <p><strong>Zip:</strong> {{ patient.zip_code }}</p>
+  <p><strong>Province:</strong> {{ patient.get_province_display }}</p>
+
+
+
+
+
+
+
+  <ul class="nav nav-tabs" style="margin-top: 60px;" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="complaintsTab" data-bs-toggle="tab" href="#complaintsListContent" role="tab" aria-controls="home" aria-selected="true">Chief Complaints</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="appointmentsTab" data-bs-toggle="tab" href="#appointmentsListContent" role="tab" aria-controls="profile" aria-selected="false">Appointments</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="tabContent">
+    <div class="tab-pane fade show active" id="complaintsListContent" role="tabpanel" aria-labelledby="appointments-tab">
+      <h2 class="mt-3">Chief complaints</h2>
+      <hr>
+      {% if complaints %}
+      <div class="table-responsive">
+        <table class="table" id='complaintsList'>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">View</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Date of observation</th>
+              <th scope="col">Complaints</th>
+              <th scope="col">General Condition</th>
+              <th scope="col">Current Medication</th>
+              <th scope="col">Immediate Action Taken</th>
+              <th scope="col">Diagnosis</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {% for complaint in complaints %}
+            <tr>
+              <td scope="row">{{ forloop.counter }}</td>
+              <td><a href="{% url 'dashboard:chief-complaint-detail' complaint.pk %}" title="View this chief complaint"><i class="fas fa-eye"></i></a></td>
+              <td><a href="{% url 'dashboard:chief-complaint-update' complaint.pk %}" title="Update this chief complaint"><i class="fas fa-edit"></i></a></td>
+              <td><a href="{% url 'dashboard:chief-complaint-delete' complaint.pk %}" class="text-danger" title="Delete this chief complaint"><i class="fas fa-trash-alt"></i></a></td>
+              <td>{{ complaint.date_of_observation|default:"-" }}</td>
+              <td>{{ complaint.complaints|default:"-" }}</td>
+              <td>{{ complaint.general_condition|default:"-" }}</td>
+              <td>{{ complaint.current_medication|default:"-" }}</td>
+              <td>{{ complaint.immediate_action_taken|default:"-" }}</td>
+              <td>{{ complaint.diagnosis|default:"-" }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+        <p>No chief complaints yet</p>
+      {% endif %}      
+    </div>
+    <div class="tab-pane fade" id="appointmentsListContent" role="tabpanel" aria-labelledby="appointments-tab">
+      <h2 class="mt-3">Appointments</h2>
+      <hr>
+      {% if appointments %}
+      <div class="table-responsive">
+        <table class="table" id='appointmentsList'>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">View</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Date of Appointment</th>
+              <th scope="col">Status</th>
+              <th scope="col">Comment</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {% for appointment in appointments %}
+            <tr>
+              <td scope="row">{{ forloop.counter }}</td>
+              <td><a href="{% url 'dashboard:appointment-detail' appointment.pk %}" title="View this appointment"><i class="fas fa-eye"></i></a></td>
+              <td><a href="{% url 'dashboard:appointment-update' appointment.pk %}" title="Update this appointment"><i class="fas fa-edit"></i></a></td>
+              <td><a href="{% url 'dashboard:appointment-delete' appointment.pk %}" class="text-danger" title="Delete this appointment"><i class="fas fa-trash-alt"></i></a></td>
+              <td>{{ appointment.date_of_appointment|default:"-" }}</td>
+              <td>{{ appointment.get_status_display|default:"-" }}</td>
+              <td>{{ appointment.comment|default:"-" }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+        <p>No appointments yet</p>
+      {% endif %}   
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block additionalScripts %}
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#complaintsList').dataTable();
+      
+      $('#appointmentsList').dataTable();
+  } );
+  </script>
+{% endblock %} 
