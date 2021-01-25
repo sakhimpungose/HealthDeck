@@ -143,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 AUTH_USER_MODEL = 'accounts.User'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = 'dashboard:patients'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard'
 
 #
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
