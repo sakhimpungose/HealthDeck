@@ -26,7 +26,7 @@ SECRET_KEY = 'z!=lsu9seclnl-(_9(&87tn7v-rb1=a3qcy_6#@4-8@0jedc(x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sakhimpungose.pythonanywhere.com']
+ALLOWED_HOSTS = ['healthdeck.pythonanywhere.com']
 
 
 # Application definition
