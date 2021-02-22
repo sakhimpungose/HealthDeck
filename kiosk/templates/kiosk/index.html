@@ -11,187 +11,229 @@
   <meta content="" name="Zaid, Sakhile, Vuyiswa, Sinandele, Nasief">
 
  
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="{% static 'assetso/css/material-kit.css?v=2.0.7' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 
+
+
+
+
+
+<!------------------------------------
+2RD
+--->
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <!-- Vendor CSS Files -->
-  <link href="{% static 'kiosk/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'kiosk/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-  <link href="{% static 'kiosk/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'kiosk/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'kiosk/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
-  <link href="{% static 'kiosk/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-  <link href="{% static 'kiosk/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="{% static 'kiosk/assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
   
 </head>
 
+
+<div class="landing-page sidebar-collapse">
+  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+  <div class="container">
+    <div class="navbar-translate">
+          <a class="navbar-brand" href="{% url 'kiosk:kiosk' %}"><b>HEALTHDECK</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="#About" class="nav-link">
+                ABOUT
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#Service" class="nav-link">
+                SERVICE
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#Price" class="nav-link">
+                PRICE
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#Team" class="nav-link">
+                TEAM
+              </a>
+            </li>
+              </a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'acounts:login' %}" class="btn btn-rose btn-raised btn-round " data-toggle="dropdown">
+                Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#Contact" class="nav-link">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-->
+    </nav>
+    <!-- end default navbar -->
+
+       <!-- ======= Hero Section ======= -->
+       <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                  
+                  <h3>We are on a results-driven mission to design and code inituitive software solutions for all medical practices.</h3>
+                  <div class="d-lg-flex">
+                    <a href="#Contact" class="btn-get-started scrollto">Get Started</a>
+        
+                  </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-4 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assetso/img/undraw_filing_system_b5d2.svg' %}" class="img-fluid animated" alt="">
+                </div>
+              </div>
+            </div>
+    
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+          <defs>
+            <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+          </defs>
+          <g class="wave1">
+            <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+          </g>
+          <g class="wave2">
+            <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+          </g>
+          <g class="wave3">
+            <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+          </g>
+        </svg>
+      </section><!-- End Hero -->
+    <br>
+    <br>
+
+    
+    <!-------------------------------------------------------
+      MINI ABOUT SECTION
+      --------------------------------------------------------------------------->
+<div class="main main-raised">
+  <div id="About">
+
+      <section class="section section-lg">
+        <div class="container">
+            <div class="row align-items-center justify-content-around">
+                <div class="col-md-6 col-xl-6 my-5 mt-sm-0 d-none d-sm-block">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <h2 class="h1 mb-5 font-weight-light">ABOUT<br><span class="font-weight-bold">US</span></h2>
+                  <img class="rounded img-fluid effect-img-1" src="{% static 'assetso/img/moo.gif' %}" alt="Themesberg Office">
+                </div>
+                <div class="col-md-6 col-xl-5 text-center text-md-left">
+                  <br>
+                  <br>
+                    <p class="lead">HealthDeck is a complete and unified web application for every role in the medical practice. Simplified billing, flexible scheduling, insightful reporting and easy-to-use patient relationship management tools.</p>
+                    <p class="lead">The HealthDeck Software Practice Management System is a comprehensive medical management, accounting and clinical solution ranging from smaller practices to large medical centres. We provide all disciplines of medical practitioners with Complete Practice Management Software that facilitates the workflow from the diary, billing, clinical notes and switching.</p>
+                </div>
+            </div>
+              <div class="container" data-aos="fade-up">
+        <div id="Service">
+         <div>
+           <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+                  <div class="section-title">
+                  <h2>Services</h2>
+                  <p><b>We believe doctors should focus on their patients’ wellbeing and that our systems should help make the doctor and patient’s life easier.</b></p>
+                </div>
+        <br>
+        <br>
+                <div class="row">
+                  <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                      <h5><a href="">FULLY INTEGRATED DIARY</a></h5>
+                      <p>Fully integrated diary for a faster reception. A powerful and robust diary that is customisable for each user. Customisations include booking statuses, diary display modes, colours and visibility as well as a diary-integrated task list. 
+                Plus, it includes an automated benefit checker</p>
+                    </div>
+                  </div>
+        
+                  <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box">
+                      <h5><a href="">PAPERLESS CAPABILITY</a></h5>
+                      <p>Manage a more efficient medical practice by eliminating clutter and paperwork that slow down day-to-day activities.</p>
+                    </div>
+                  </div>
+        
+                  <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box">
+                      <h5><a href="">ELECTRONIC MEDICAL RECORDS (EMR)</a></h5>
+                      <p>A digital file cabinet for patient files – storing medical history, scripts, medications, lab results, treatment plans and patient billing information.
+                Implementing an EMR increases medical practices’ productivity and the quality of medical care given to patients.
+                </p>
+                    </div>
+                  </div>
+        
+                  <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="icon-box">
+                      <h5><strong><a href="">CUSTOMISABLE CLINICAL TEMPLATES</a></b></strong></h5>
+                      <p>Customise your clinical templates to fit your practice type, workflow and preferences. It’s a faster, simpler way to capture patient data according to your specific requirements, giving you software that fits your practice ,allowing you as medical practitioners to focus on your area of expertise – quality patient care.</p>
+                    </div>
+                  </div>
+        
+                </div>
+        
+              </div>
+            </section><!-- End Services Section -->
+        
+        </div>
+    </section>
+</div>
+</div>
+</div>
+</div>
 <!-- =======================================================
                            BODY
   ======================================================== -->
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="{% url 'kiosk:kiosk' %}"><img src="{% static 'kiosk/assets/img/team/software logo 2.png' %}" alt="image" height = "100px"></a></h1>
-	   
-      
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="{%  url 'kiosk:kiosk' %}">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <a href="#pricing" class="get-started-btn scrollto">Get Started</a>
-          <!---The above button will lead to the subscription page where users can either lognin if the have a paid subscription with us or they can signup -->
-          <li><a href="#team">Team</a></li>
-           
-          <li><a href="#contact">Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-     
-
-    </div>
-  </header><!-- End Header -->
-
-   <!-- ======= Hero Section ======= -->
-   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-              <h1>Better Solutions For Your medical practice.</h1>
-              <h2>HealthDeck Securely Acessible anywhere, anytime.</h2>
-              <div class="d-lg-flex">
-                <a href="{% url 'accounts:login' %}" class="btn-get-started scrollto">LogIn</a>
-                <a href="#pricing" class="btn-get-started scrollto">Get Started</a>
-    
-              </div>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-              <img src="{% static 'kiosk/assets/img/digital-document-management.jpg' %}" class="img-fluid animated" alt="">
-            </div>
-          </div>
-        </div>
-        
-        
-
-    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-      <defs>
-        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-      </defs>
-      <g class="wave1">
-        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
-      </g>
-      <g class="wave2">
-        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
-      </g>
-      <g class="wave3">
-        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
-      </g>
-    </svg>
-
-  </section><!-- End Hero -->
-
- 
-
-
-  <main id="main">
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About Us</h2>
-        </div>
-
-        <div class="row content">
-          <div class="col-lg-6">
-            <p>
-              HealthDeck is a complete and unified web-based software for every role in the medical practice. 
-            </p>
-			<h4><i><b>What to expect from the software : </b></i></h4>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Simplified biling</li>
-              <li><i class="ri-check-double-line"></i> Flexible Scheduling</li>
-              <li><i class="ri-check-double-line"></i>Insightful reporting </li>
-			  <li><i class="ri-check-double-line"></i>Easy-to-use patient management tools.... </li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <a href="#about" class="btn-learn-more">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
-
-       
-    
     <!-- ======= Services Section --->
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>We believe doctors should focus on their patients’ wellbeing and that our systems should help make the doctor and patient’s life easier.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">FULLY INTEGRATED DIARY</a></h4>
-              <p>Fully integrated diary for a faster reception. A powerful and robust diary that is customisable for each user. Customisations include booking statuses, diary display modes, colours and visibility as well as a diary-integrated task list. 
-			  Plus, it includes an automated benefit checker</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">PAPERLESS CAPABILITY</a></h4>
-              <p>Manage a more efficient medical practice by eliminating clutter and paperwork that slow down day-to-day activities.</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">ELECTRONIC MEDICAL RECORDS (EMR)</a></h4>
-              <p>A digital file cabinet for patient files – storing medical history, scripts, medications, lab results, treatment plans and patient billing information.
-				Implementing an EMR increases medical practices’ productivity and the quality of medical care given to patients.
-				</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">CUSTOMISABLE CLINICAL TEMPLATES</a></h4>
-              <p>Customise your clinical templates to fit your practice type, workflow and preferences. It’s a faster, simpler way to capture patient data according to your specific requirements, giving you software that fits your practice ,allowing you as medical practitioners to focus on your area of expertise – quality patient care.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-
+   
     <!-- ======= Pricing Section ======= -->
+    <div id="Price">
+      <br>
+    <body class="vee">
     <section id="pricing" class="pricing">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Pricing</h2>
-          <p>Affordable plans available to you anytime, anywhere.</p>
+          <p><b>Affordable plans available to you anytime, anywhere.</b></p>
         </div>
 
         <div class="row">
@@ -203,8 +245,6 @@
               <ul>
                 <li><i class="bx bx-check"></i> 30 Email Addresses </li>
                 <li><i class="bx bx-check"></i> 3 GB Storage </li>
-                <li><i class="bx bx-check"></i> 5 Databases</li>
-                <li ><i class="bx bx-check"></i> 10 GB Bandwidth <span></span></li>
                 <li ><i class="bx bx-check"></i> 24/7 Unlimited Support<span></span></li>
               </ul>
             </div>
@@ -217,8 +257,7 @@
               <ul>
                 <li><i class="bx bx-check"></i> 70 Email Addresses</li>
                 <li><i class="bx bx-check"></i> 5 GB Storage</li>
-                <li><i class="bx bx-check"></i> 15 Databases</li>
-                <li><i class="bx bx-check"></i> 20 GB Bandwidth</li>
+                <li><i class="bx bx-check"></i> Data Back-Up </li>
                 <li><i class="bx bx-check"></i> 24/7 Unlimited Support</li>
               </ul>
             </div>
@@ -231,32 +270,32 @@
               <ul>
                 <li><i class="bx bx-check"></i> 250 Email Addresses</li>
                 <li><i class="bx bx-check"></i> 125 GB Storage</li>
-                <li><i class="bx bx-check"></i> 140 Databases</li>
-                <li><i class="bx bx-check"></i> 50 GB Bandwidth</li>
+                <li><i class="bx bx-check"></i> Data Back-Up</li>
                 <li><i class="bx bx-check"></i> 24/7 Unlimited Support</li>
               </ul>
             </div>
           </div>
 
         </div>
-
+</div>
       </div>
     </section><!-- End Pricing Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    <div id="team">
+    <section id="Team" class="team section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
+          <div><br></div>
+          <div><br></div>
+
           <h2>Development Team</h2>
           <p>Meet Our Experts!</p>
         </div>
-
         <div class="row">
-
           <div class="col-lg-6">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="{% static 'kiosk/assets/img/team/zama.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/zama.jpg' %}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Zaid Ndabeni</h4>
                 <span>Front-End Developer</span>
@@ -271,7 +310,7 @@
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="{% static 'kiosk/assets/img/team/sakhi.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/sakhile.jpg' %}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Sakhile Mpungose</h4>
                 <span>Back-End Developer</span>
@@ -286,7 +325,7 @@
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="{% static 'kiosk/assets/img/team/Vuyiswa.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/Vuyiswa.jpg' %}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Vuyiswa Mnyamane</h4>
                 <span>Data Scientist</span>
@@ -301,7 +340,7 @@
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="{% static 'kiosk/assets/img/team/sinandele.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/sinandele.jpg' %}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Sinandele Qinga</h4>
                 <span>Data Scientist</span>
@@ -312,10 +351,10 @@
               </div>
             </div>
           </div>
-
+        </div>
 		<div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="{% static 'kiosk/assets/img/team/nasief.jfif' %}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{% static 'assets/img/team/nasief.jfif' %}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Nasief Khan</h4>
                 <span>Back-End Developer</span>
@@ -332,104 +371,68 @@
     </section><!-- End Team Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Get in touch ,Today!</p>
-        </div>
-
+    <div id="Contact">
+      <div class="page-header header-filter" style="background-image: url('{% static \'assetso/img/map.png\' %}'); background-size: cover; background-position: top center; height: 50%;">
+        <div class="container">
         <div class="row">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>31 Lower Long, Cape Town, 8001</p>
-              </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@Hdeck.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>(021) 766-5815</p>
-              </div>
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.9109273005624!2d18.422481715211486!3d-33.917691980642736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc676055f3ce6b%3A0xc3fda2104679e043!2s31%20Lower%20Long%20St%2C%20Cape%20Town%20City%20Centre%2C%20Cape%20Town%2C%208000!5e0!3m2!1sen!2sza!4v1610913408491!5m2!1sen!2sza"" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+          <div class="col-lg-12 col-md-6 ml-auto mr-auto">
+            <div class="card card-login">
+              <form class="form" method="" action="">
+                <div class="card-header card-header-primary text-center">
+                  <h4 class="card-title">Contact Us</h4>
+                  <div class="social-line">
+                    <a href="#" class="btn btn-just-icon btn-link">
+                      <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a href="#" class="btn btn-just-icon btn-link">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn btn-just-icon btn-link">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </div>
+                </div>
+                <p class="description text-center">Or Leave Your details and we will contact you.</p>
+                <div class="card-body">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">face</i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="First Name...">
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">mail</i>
+                      </span>
+                    </div>
+                    <input type="email" class="form-control" placeholder="Email...">
+                  </div>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                      </span>
+                    </div>
+                  
+                </div>
+                <div class="footer text-center">
+                  <a href="{% url 'kiosk:kiosk' %}" class="btn btn-primary btn-link btn-wd btn-lg">Send</a>
+                </div>
+              </form>
             </div>
-
           </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Get healthy news, tip and solutions to your problems from our experts.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
       </div>
     </div>
 
-  
-
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>HealthDeck</span></strong>. All Rights Reserved
-      </div>
+      <br><b>ADRESS : </b<BR> 301 Lower Long, Cape Town,  9001<br>Contact Number: (+27)766 581-575<b></b></div>
       <div class="credits">
        
         Designed by <a href="#">HealthDeck</a>
@@ -441,18 +444,31 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="{% static 'kiosk/assets/vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/venobox/venobox.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'kiosk/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
 
   <!-- Main JS File -->
-  <script src="{% static 'kiosk/assets/js/main.js' %}"></script>
+  <script src="assets/js/main.js' %}"></script>
+
+  <!--   Core JS Files   -->
+  <script src="{% static 'assetso/js/core/jquery.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assetso/js/core/popper.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assetso/js/core/bootstrap-material-design.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assetso/js/plugins/moment.min.js' %}"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="{% static 'assetso/js/plugins/bootstrap-datetimepicker.js' %}" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="{% static 'assetso/js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'assetso/js/material-kit.js?v=2.0.7' %}" type="text/javascript"></script>
 
 </body>
 

@@ -8,22 +8,25 @@ body {
   color: #444444;
 }
 
-a {
-  color: #47b2e4;
+
+
+.vee a {
+  color:  #f03261;
+  text-decoration: none;
+  
+}
+
+.vee a:hover {
+  color: #0d1641 ;
   text-decoration: none;
 }
 
-a:hover {
-  color: #73c5eb;
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
+.vee h1, .vee h2, .vee h3, .vee h4, .vee h5, .vee h6 {
   font-family: "Jost", sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  :root {
+  .vee :root {
     scroll-behavior: auto;
   }
 }
@@ -33,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
-.back-to-top {
+.vee .back-to-top {
   position: fixed;
   display: none;
   right: 15px;
@@ -41,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99999;
 }
 
-.back-to-top i {
+.vee .back-to-top i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,12 +52,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  background: #47b2e4;
+  background: #f03261;
   color: #fff;
   transition: all 0.4s;
 }
 
-.back-to-top i:hover {
+.vee .back-to-top i:hover {
   background: #209dd8;
   color: #fff;
 }
@@ -62,13 +65,14 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+.vee #header {
   transition: all 0.5s;
   z-index: 997;
+background-color: #003264;
   padding: 15px 0;
 }
 
-#header.header-scrolled, #header.header-inner-pages {
+.vee #header.header-scrolled, .vee #header.header-inner-pages {
   background: rgba(40, 58, 90, 0.9);
 }
 
@@ -77,23 +81,25 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-.nav-menu ul {
+.vee .nav-menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.nav-menu > ul {
+.vee .nav-menu > ul {
   display: flex;
+
 }
 
-.nav-menu > ul > li {
+.vee .nav-menu > ul > li {
   position: relative;
   white-space: nowrap;
   padding: 10px 0 10px 28px;
+  
 }
 
-.nav-menu a {
+.vee .nav-menu a {
   display: block;
   position: relative;
   color: #fff;
@@ -102,13 +108,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
+  
 }
 
-.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+.vee .nav-menu a:hover, .vee .nav-menu .active > a, .vee .nav-menu li:hover > a {
   color: #47b2e4;
 }
 
-.nav-menu .drop-down ul {
+.vee .nav-menu .drop-down ul {
   border-radius: 8px;
   display: block;
   position: absolute;
@@ -125,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* Get Startet Button */
-.get-started-btn {
+.vee .get-started-btn {
   margin-left: 25px;
   color: #fff;
   border-radius: 50px;
@@ -136,22 +143,23 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   border: 2px solid #47b2e4;
   font-weight: 600;
+  
 }
 
-.get-started-btn:hover {
+.vee .get-started-btn:hover {
   background: #31a9e1;
   color: #fff;
 }
 
 @media (max-width: 768px) {
-  .get-started-btn {
+  .vee .get-started-btn {
     margin: 0 48px 0 0;
     padding: 6px 20px 7px 20px;
   }
 }
 
 /* Mobile Navigation */
-.mobile-nav-toggle {
+.vee .mobile-nav-toggle {
   position: fixed;
   top: 20px;
   right: 15px;
@@ -166,11 +174,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
 }
 
-.mobile-nav-toggle i {
+.vee .mobile-nav-toggle i {
   color: #fff;
 }
 
-.mobile-nav {
+.vee .mobile-nav {
   position: fixed;
   top: 55px;
   right: 15px;
@@ -186,13 +194,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
 }
 
-.mobile-nav * {
+.vee .mobile-nav * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.mobile-nav a {
+.vee .mobile-nav a {
   display: block;
   position: relative;
   color: #37517e;
@@ -201,13 +209,13 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+.vee .mobile-nav a:hover, .vee .mobile-nav .active > a, .vee .mobile-nav li:hover > a {
   color: #47b2e4;
   text-decoration: none;
 }
 
 
-.mobile-nav-overly {
+.vee .mobile-nav-overly {
   width: 100%;
   height: 100%;
   z-index: 9997;
@@ -220,23 +228,23 @@ h1, h2, h3, h4, h5, h6 {
   transition: ease-in-out 0.2s;
 }
 
-.mobile-nav-active {
+.vee .mobile-nav-active {
   overflow: hidden;
 }
 
-.mobile-nav-active .mobile-nav {
+.vee .mobile-nav-active .mobile-nav {
   opacity: 1;
   visibility: visible;
 }
 
-.mobile-nav-active .mobile-nav-toggle i {
+.vee .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
 
 /*--------------------------------------------------------------
 # Hero Section 1
 --------------------------------------------------------------*/
-#hero {
+.vee #hero {
   width: 100%;
   height: 80vh;
   background: #003264;
@@ -244,11 +252,11 @@ h1, h2, h3, h4, h5, h6 {
   animation-delay: 0.8s;
 }
 
-#hero .container {
+.vee #hero .container {
   padding-top: 72px;
 }
 
-#hero h1 {
+.vee #hero h1 {
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 700;
@@ -256,13 +264,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-#hero h2 {
+.vee #hero h2 {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 50px;
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+.vee #hero .btn-get-started {
   font-family: "Jost", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -276,37 +284,37 @@ h1, h2, h3, h4, h5, h6 {
   background: #47b2e4;
 }
 
-#hero .btn-get-started:hover {
+.vee #hero .btn-get-started:hover {
   background: #209dd8;
 }
 
-#hero .animated {
+.vee #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
 @media (max-width: 991px) {
-  #hero {
+  .vee #hero {
     height: 100vh;
     text-align: center;
   }
-  #hero .animated {
+  .vee #hero .animated {
     -webkit-animation: none;
     animation: none;
   }
-  #hero .hero-img {
+  .vee #hero .hero-img {
     text-align: center;
   }
-  #hero .hero-img img {
+  .vee #hero .hero-img img {
     width: 50%;
   }
 }
 
 @media (max-width: 768px) {
-  #hero h1 {
+  .vee #hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
-  #hero h2 {
+  .vee #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -336,21 +344,21 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section 2
 --------------------------------------------------------------*/
 
-.hero-waves {
+.vee .hero-waves {
   
   width: 100%;
   height: 60px;
   position: relative;
 }
 
-.wave1 use {
+.vee .wave1 use {
     
   animation: move-forever2 8s linear infinite;
   -webkit-animation-delay: -2s;
   animation-delay: -2s;
 }
 
-.wave3 use {
+.vee .wave3 use {
   -webkit-animation: move-forever3 6s linear infinite;
   animation: move-forever3 6s linear infinite;
   -webkit-animation-delay: -2s;
@@ -415,21 +423,21 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-section {
+.vee section {
   padding: 60px 0;
   overflow: hidden;
 }
 
-.section-bg {
+.vee .section-bg {
   background-color: #f3f5fa;
 }
 
-.section-title {
+.vee .section-title {
   text-align: center;
   padding-bottom: 30px;
 }
 
-.section-title h2 {
+.vee .section-title h2 {
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
@@ -439,7 +447,7 @@ section {
   color: #37517e;
 }
 
-.section-title h2::before {
+.vee .section-title h2::before {
   content: '';
   position: absolute;
   display: block;
@@ -450,44 +458,44 @@ section {
   left: calc(50% - 60px);
 }
 
-.section-title h2::after {
+.vee .section-title h2::after {
   content: '';
   position: absolute;
   display: block;
   width: 40px;
   height: 3px;
-  background: #47b2e4;
+  background: #061d27;
   bottom: 0;
   left: calc(50% - 20px);
 }
 
-.section-title p {
+.vee .section-title p {
   margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
-.about .content h3 {
+.vee .about .content h3 {
   font-weight: 600;
   font-size: 26px;
 }
 
-.about .content ul {
+.vee .about .content ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.vee .about .content ul li {
   padding-left: 28px;
   position: relative;
 }
 
-.about .content ul li + li {
+.vee .about .content ul li + li {
   margin-top: 10px;
 }
 
-.about .content ul i {
+.vee .about .content ul i {
   position: absolute;
   left: 0;
   top: 2px;
@@ -496,11 +504,11 @@ section {
   line-height: 1;
 }
 
-.about .content p:last-child {
+.vee .about .content p:last-child {
   margin-bottom: 0;
 }
 
-.about .content .btn-learn-more {
+.vee .about .content .btn-learn-more {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -517,7 +525,7 @@ section {
   border: 2px solid #47b2e4;
 }
 
-.about .content .btn-learn-more:hover {
+.vee .about .content .btn-learn-more:hover {
   background: #47b2e4;
   color: #fff;
   text-decoration: none;
@@ -527,45 +535,45 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+.vee .services .icon-box {
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
   background: rgb(255, 255, 255);
 }
 
-.services .icon-box .icon {
+.vee .services .icon-box .icon {
   margin-bottom: 10px;
 }
 
-.services .icon-box .icon i {
+.vee .services .icon-box .icon i {
   color:#ffbc3e;
   font-size: 36px;
   transition: 0.3s;
 }
 
-.services .icon-box h4 {
+.vee .services .icon-box h4 {
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.services .icon-box h4 a {
+.vee .services .icon-box h4 a {
   color: #1a325e;
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-box p {
+.vee .services .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.services .icon-box:hover {
+.vee .services .icon-box:hover {
   transform: translateY(-10px);
 }
 
-.services .icon-box:hover h4 a {
+.vee .services .icon-box:hover h4 a {
   color: #47b2e4;
 }
 
@@ -573,11 +581,11 @@ section {
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
-.pricing .row {
+.vee .pricing .row {
   padding-top: 40px;
 }
 
-.pricing .box {
+.vee .pricing .box {
   padding: 60px 40px;
   box-shadow: 0 3px 20px -2px rgba(20, 45, 100, 0.1);
   background: #fff;
@@ -586,32 +594,32 @@ section {
   border-radius: 5px;
 }
 
-.pricing h3 {
+.vee .pricing h3 {
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 20px;
   color: #37517e;
 }
 
-.pricing h4 {
+.vee .pricing h4 {
   font-size: 48px;
-  color: #37517e;
+  color: #f03261;
   font-weight: 400;
   font-family: "Jost", sans-serif;
   margin-bottom: 25px;
 }
 
-.pricing h4 sup {
+.vee .pricing h4 sup {
   font-size: 28px;
 }
 
-.pricing h4 span {
-  color: #47b2e4;
+.vee .pricing h4 span {
+  color: #f03261;
   font-size: 18px;
   display: block;
 }
 
-.pricing ul {
+.vee .pricing ul {
   padding: 20px 0;
   list-style: none;
   color: #999;
@@ -619,78 +627,78 @@ section {
   line-height: 20px;
 }
 
-.pricing ul li {
+.vee .pricing ul li {
   padding: 10px 0 10px 30px;
   position: relative;
 }
 
-.pricing ul i {
+.vee .pricing ul i {
   color: #7cd10cdc;
   font-size: 24px;
   position: absolute;
   left: 0;
-  top: 6px;
+  top: 4px;
 }
 
-.pricing ul .na {
+.vee .pricing ul .na {
   color: #ccc;
 }
 
-.pricing ul .na i {
+.vee .pricing ul .na i {
   color: #ccc;
 }
 
-.pricing ul .na span {
+.vee .pricing ul .na span {
   text-decoration: line-through;
 }
 
-.pricing .buy-btn {
+.vee .pricing .buy-btn {
   display: inline-block;
   padding: 12px 35px;
   border-radius: 50px;
-  color: #47b2e4;
+  color: #f03261;
   transition: none;
   font-size: 16px;
   font-weight: 500;
   font-family: "Jost", sans-serif;
   transition: 0.3s;
-  border: 1px solid #47b2e4;
+  border: 1px solid #f03261;
 }
 
-.pricing .buy-btn:hover {
+.vee .pricing .buy-btn:hover {
   background: #47b2e4;
   color: #fff;
 }
 
-.pricing .featured {
+.vee .pricing .featured {
   border-top-color: #47b2e4;
 }
 
-.pricing .featured .buy-btn {
+.vee .pricing .featured .buy-btn {
   background: #47b2e4;
   color: #fff;
 }
 
-.pricing .featured .buy-btn:hover {
+.vee .pricing .featured .buy-btn:hover {
   background: #23a3df;
 }
 
 @media (max-width: 992px) {
-  .pricing .box {
+  .vee .pricing .box {
     max-width: 60%;
     margin: 0 auto 30px auto;
   }
 }
 
 @media (max-width: 767px) {
-  .pricing .box {
+  .vee .pricing .box {
     max-width: 80%;
     margin: 0 auto 30px auto;
   }
 }
 
 @media (max-width: 420px) {
-  .pricing .box {
+  .vee .pricing .box {
     max-width: 100%;
     margin: 0 auto 30px auto;
   }
@@ -700,7 +708,7 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
-.team .member {
+.vee .team .member {
   position: relative;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -709,40 +717,41 @@ section {
   transition: 0.5s;
 }
 
-.team .member .pic {
+.vee .team .member .pic {
   overflow: hidden;
   width: 180px;
   border-radius: 50%;
 }
 
-.team .member .pic img {
+.vee .team .member .pic img {
   transition: ease-in-out 0.3s;
 }
 
-.team .member:hover {
+.vee .team .member:hover {
   transform: translateY(-10px);
 }
 
-.team .member .member-info {
+.vee .team .member .member-info {
   padding-left: 30px;
 }
 
-.team .member h4 {
+.vee .team .member h4 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
   color: #37517e;
 }
 
-.team .member span {
+.vee .team .member span {
   display: block;
   font-size: 15px;
   padding-bottom: 10px;
   position: relative;
-  font-weight: 500;
+  font-weight: 1000;
+  color:#f03261 ;
 }
 
-.team .member span::after {
+.vee .team .member span::after {
   content: '';
   position: absolute;
   display: block;
@@ -753,19 +762,20 @@ section {
   left: 0;
 }
 
-.team .member p {
+.vee .team .member p {
   margin: 10px 0 0 0;
   font-size: 14px;
+  
 }
 
-.team .member .social {
+.vee .team .member .social {
   margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.team .member .social a {
+.vee .team .member .social a {
   transition: ease-in-out 0.3s;
   display: flex;
   align-items: center;
@@ -776,21 +786,21 @@ section {
   background: #eff2f8;
 }
 
-.team .member .social a i {
+.vee .team .member .social a i {
   color: #37517e;
   font-size: 16px;
   margin: 0 2px;
 }
 
-.team .member .social a:hover {
-  background: #47b2e4;
+.vee .team .member .social a:hover {
+  background: #f03261;
 }
 
-.team .member .social a:hover i {
+.vee .team .member .social a:hover i {
   color: #fff;
 }
 
-.team .member .social a + a {
+.vee .team .member .social a + a {
   margin-left: 8px;
 }
 
@@ -799,7 +809,7 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .info {
+.vee .contact .info {
   border-top: 3px solid #22e922;
   border-bottom: 3px solid #22e922;
   padding: 30px;
@@ -808,7 +818,7 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
 }
 
-.contact .info i {
+.vee .contact .info i {
   font-size: 20px;
   color: #47b2e4;
   float: left;
@@ -822,7 +832,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.contact .info h4 {
+.vee.contact .info h4 {
   padding: 0 0 0 60px;
   font-size: 22px;
   font-weight: 600;
@@ -830,22 +840,22 @@ section {
   color: #37517e;
 }
 
-.contact .info p {
+.vee.contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
   font-size: 14px;
   color: #6182ba;
 }
 
-.contact .info .email p {
+.vee.contact .info .email p {
   padding-top: 5px;
 }
 
-.contact .info .social-links {
+.vee.contact .info .social-links {
   padding-left: 60px;
 }
 
-.contact .info .social-links a {
+.vee.contact .info .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #333;
@@ -860,17 +870,17 @@ section {
   margin-right: 10px;
 }
 
-.contact .info .social-links a:hover {
+.vee.contact .info .social-links a:hover {
   background: #47b2e4;
   color: #fff;
 }
 
-.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+.vee.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
   background: #47b2e4;
   color: #fff;
 }
 
-.contact .php-email-form {
+.vee.contact .php-email-form {
   width: 100%;
   border-top: 3px solid #47b2e4;
   border-bottom: 3px solid #47b2e4;
@@ -879,11 +889,11 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
-.contact .php-email-form .form-group {
+.vee.contact .php-email-form .form-group {
   padding-bottom: 8px;
 }
 
-.contact .php-email-form .validate {
+.vee.contact .php-email-form .validate {
   display: none;
   color: red;
   margin: 0 0 15px 0;
@@ -891,7 +901,7 @@ section {
   font-size: 13px;
 }
 
-.contact .php-email-form .error-message {
+.vee.contact .php-email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -900,11 +910,11 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.vee.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.vee.contact .php-email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -913,14 +923,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.vee.contact .php-email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.vee.contact .php-email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -933,30 +943,30 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form .form-group {
+.vee.contact .php-email-form .form-group {
   margin-bottom: 20px;
 }
 
-.contact .php-email-form label {
+.vee.contact .php-email-form label {
   padding-bottom: 8px;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.vee.contact .php-email-form input, .contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
   border-radius: 4px;
 }
 
-.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+.vee.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
   border-color: #47b2e4;
 }
 
-.contact .php-email-form input {
+.vee.contact .php-email-form input {
   height: 44px;
 }
 
-.contact .php-email-form textarea {
+.vee.contact .php-email-form textarea {
   padding: 10px 12px;
 }
 
@@ -969,7 +979,7 @@ section {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.vee.contact .php-email-form button[type="submit"]:hover {
   background: #209dd8;
 }
 
@@ -994,7 +1004,7 @@ section {
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
-.breadcrumbs {
+.vee.breadcrumbs {
   padding: 15px 0;
   background: #f3f5fa;
   min-height: 40px;
@@ -1002,24 +1012,24 @@ section {
 }
 
 @media (max-width: 992px) {
-  .breadcrumbs {
+  .vee.breadcrumbs {
     margin-top: 68px;
   }
 }
 
-.breadcrumbs h2 {
+.vee.breadcrumbs h2 {
   font-size: 28px;
   font-weight: 600;
   color: #37517e;
   text-align: center;
 }
-.breadcrumbs  img{
+.vee.breadcrumbs  img{
 height: 100px;
 width: 300px;
 align-self: start;
 }
 
-.breadcrumbs ol {
+.vee.breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -1028,11 +1038,11 @@ align-self: start;
   font-size: 14px;
 }
 
-.breadcrumbs ol li + li {
+.vee.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.vee.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #4668a2;
@@ -1044,12 +1054,12 @@ align-self: start;
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer {
+.vee #footer {
   font-size: 14px;
   background: #37517e;
 }
 
-#footer .footer-newsletter {
+.vee #footer .footer-newsletter {
   padding: 50px 0;
   background: #f3f5fa;
   text-align: center;
@@ -1057,7 +1067,7 @@ align-self: start;
   color: #444444;
 }
 
-#footer .footer-newsletter h4 {
+.vee #footer .footer-newsletter h4 {
   font-size: 24px;
   margin: 0 0 20px 0;
   padding: 0;
@@ -1066,7 +1076,7 @@ align-self: start;
   color: #37517e;
 }
 
-#footer .footer-newsletter form {
+.vee #footer .footer-newsletter form {
   margin-top: 30px;
   background: #fff;
   padding: 6px 10px;
@@ -1076,13 +1086,13 @@ align-self: start;
   text-align: left;
 }
 
-#footer .footer-newsletter form input[type="email"] {
+.vee #footer .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 4px 8px;
   width: calc(100% - 100px);
 }
 
-#footer .footer-newsletter form input[type="submit"] {
+.vee #footer .footer-newsletter form input[type="submit"] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1098,20 +1108,20 @@ align-self: start;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-#footer .footer-newsletter form input[type="submit"]:hover {
+.vee #footer .footer-newsletter form input[type="submit"]:hover {
   background: #209dd8;
 }
 
-#footer .footer-top {
+.vee #footer .footer-top {
   padding: 60px 0 30px 0;
   background: #fff;
 }
 
-#footer .footer-top .footer-contact {
+.vee #footer .footer-top .footer-contact {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-contact h3 {
+.vee #footer .footer-top .footer-contact h3 {
   font-size: 28px;
   margin: 0 0 10px 0;
   padding: 2px 0 2px 0;
@@ -1121,7 +1131,7 @@ align-self: start;
   color: #37517e;
 }
 
-#footer .footer-top .footer-contact p {
+.vee #footer .footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
@@ -1129,7 +1139,7 @@ align-self: start;
   color: #5e5e5e;
 }
 
-#footer .footer-top h4 {
+.vee #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
   color: #37517e;
@@ -1137,46 +1147,46 @@ align-self: start;
   padding-bottom: 12px;
 }
 
-#footer .footer-top .footer-links {
+.vee #footer .footer-top .footer-links {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-links ul {
+.vee #footer .footer-top .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#footer .footer-top .footer-links ul i {
+.vee #footer .footer-top .footer-links ul i {
   padding-right: 2px;
   color: #47b2e4;
   font-size: 18px;
   line-height: 1;
 }
 
-#footer .footer-top .footer-links ul li {
+.vee #footer .footer-top .footer-links ul li {
   padding: 10px 0;
   display: flex;
   align-items: center;
 }
 
-#footer .footer-top .footer-links ul li:first-child {
+.vee #footer .footer-top .footer-links ul li:first-child {
   padding-top: 0;
 }
 
-#footer .footer-top .footer-links ul a {
+.vee #footer .footer-top .footer-links ul a {
   color: #777777;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
-#footer .footer-top .footer-links ul a:hover {
+.vee #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
   color: #47b2e4;
 }
 
-#footer .footer-top .social-links a {
+.vee #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #47b2e4;
@@ -1191,41 +1201,41 @@ align-self: start;
   transition: 0.3s;
 }
 
-#footer .footer-top .social-links a:hover {
+.vee #footer .footer-top .social-links a:hover {
   background: #209dd8;
   color: #fff;
   text-decoration: none;
 }
 
-#footer .footer-bottom {
+.vee #footer .footer-bottom {
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
 }
 
-#footer .copyright {
+.vee #footer .copyright {
   float: left;
 }
 
-#footer .credits {
+.vee #footer .credits {
   float: right;
   font-size: 13px;
 }
 
-#footer .credits a {
+.vee #footer .credits a {
   transition: 0.3s;
 }
 
 @media (max-width: 768px) {
-  #footer .footer-bottom {
+  .vee #footer .footer-bottom {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  #footer .copyright, #footer .credits {
+  .vee #footer .copyright, #footer .credits {
     text-align: center;
     float: none;
   }
-  #footer .credits {
+  .vee #footer .credits {
     padding-top: 4px;
   }
 }
